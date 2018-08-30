@@ -1,0 +1,10 @@
+{ 
+    "Type":"sap.ui.core.mvc.JSONView",
+    "controllerName":"sap.ui.demo.walkthrough.controller.App",
+    "content": [{
+       "Type":"sap.m.Button",
+       "text":"Say Hello with JSON View",
+       "press": "onJsonPress"
+    }]
+ 
+ }
