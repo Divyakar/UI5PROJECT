@@ -12,30 +12,42 @@
         </script>
     <script>
         sap.ui.getCore().attachInit(function () {
-            sap.ui.xmlview({
-                viewName: "sap.ui.demo.walkthrough.view.App"
-            }).placeAt("content");
-            sap.ui.view({
-                viewName: "sap.ui.demo.walkthrough.view.App",
-                type: sap.ui.core.mvc.ViewType.HTML,
-            }).placeAt("content1");
-            sap.ui.view({
-                viewName: "sap.ui.demo.walkthrough.view.App",
-                type: sap.ui.core.mvc.ViewType.JS,
-            }).placeAt("content2");
-            sap.ui.view({
-                viewName: "sap.ui.demo.walkthrough.view.App",
-                type: sap.ui.core.mvc.ViewType.JSON,
-            }).placeAt("content3");
+            // sap.ui.view({
+            //     viewName: "sap.ui.demo.walkthrough.view.App",
+            //     type: sap.ui.core.mvc.ViewType.HTML,
+            // }).placeAt("content1");
+            // sap.ui.view({
+            //     viewName: "sap.ui.demo.walkthrough.view.App",
+            //     type: sap.ui.core.mvc.ViewType.JS,
+            // }).placeAt("content2");
+            // sap.ui.view({
+            //     viewName: "sap.ui.demo.walkthrough.view.App",
+            //     type: sap.ui.core.mvc.ViewType.JSON,
+            // }).placeAt("content3");
+            var oModel = new sap.ui.model.json.JSONModel({
+                firstName: "Divya reddy",
+                lastName: "Karnakanti",
+                enabled: true,
+                panelHeaderText: "Data Binding Basics"
+            });
+            
+            // // Display the XML view called "App"
+            // new sap.ui.core.mvc.XMLView({ viewName: "sap.ui.demo.walkthrough.view.App" })
+            //     .placeAt("content");
+            // //for one way binding
+            // oModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
+            // // Assign the model object to the SAPUI5 core
+            // sap.ui.getCore().setModel(oModel);
+            new sap.ui.core.ComponentContainer({
+				name: "sap.ui.demo.walkthrough"
+			}).placeAt("content");
         });
     </script>
 </head>
-
 <body>
     <div class="sapUiBody" id="content"></div>
-    <div class="sapUiBody" id="content1"></div>
+    <!-- <div class="sapUiBody" id="content1"></div>
     <div class="sapUiBody" id="content2"></div>
-    <div class="sapUiBody" id="content3"></div>
+    <div class="sapUiBody" id="content3"></div> -->
 </body>
-
 </html>
